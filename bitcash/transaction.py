@@ -167,7 +167,7 @@ def construct_output_block(outputs):
         dest, amount = data
 
         # Real recipient
-        if amount:
+        if amount is not None:
             script = (OP_DUP + OP_HASH160 + OP_PUSH_20 +
                       address_to_public_key_hash(dest) +
                       OP_EQUALVERIFY + OP_CHECKSIG)
@@ -177,7 +177,7 @@ def construct_output_block(outputs):
         # Blockchain storage
         else:
             script = (OP_RETURN +
-                      len(dest).to_bytes(1, byteorder='little') +
+                      # len(dest).to_bytes(1, byteorder='little') +
                       dest)
 
             output_block += b'\x00\x00\x00\x00\x00\x00\x00\x00'
