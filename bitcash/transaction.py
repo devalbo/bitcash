@@ -33,7 +33,8 @@ OP_HASH160 = b'\xa9'
 OP_PUSH_20 = b'\x14'
 OP_RETURN = b'\x6a'
 
-MESSAGE_LIMIT = 40
+# MESSAGE_LIMIT = 40
+MESSAGE_LIMIT = 220
 
 
 class TxIn:
